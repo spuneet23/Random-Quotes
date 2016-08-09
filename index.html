@@ -1,0 +1,99 @@
+<html>
+<head>
+<title>LOCAD</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width" />
+<!-- Bootstrap -->  
+<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Google fonts  -->
+<link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+<!-- custom css -->
+<link href="assets/css/quotes.css" rel="stylesheet">
+<link href="assets/plugins/bxslider/dist/jquery.bxslider.css" rel="stylesheet" />
+
+<!-- fontawesome icons -->
+<link href="assets/css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="assets/animate.css/animate.min.css">
+<link rel="shortcut icon" type="image/png" href="assets/images/favicon.png"/>
+<link rel="shortcut icon" type="image/png" href="http://eg.com/favicon.png"/>
+</head>
+<body>
+
+<section id="quotes">
+	<div class="container">
+	  <div class="row">
+	    <div class="col-md-8 col-md-offset-2 panel">
+	       <div class="panel-body">
+	         <p class="lead"></p>
+	         <h5 class="author pull-right"></h5>
+	         <br>
+	         <br>
+	         <a class="btn btn-primary pull-right" id="newQuote">New Quote</a> 
+	         <a class="btn btn-default twitter" href="https://twitter.com/intent/tweet"><span class="fa fa-twitter"></span></a>
+	         <a class="btn btn-default facebook" href="http://www.facebook.com/sharer/sharer.php?u=http://www.google.com"><span class="fa fa-facebook"></span></a>
+	       </div>
+	    </div>
+	  </div>
+	</div>
+</section>
+
+
+
+
+<!-- BOOTSTRAP CORE JAVASCRIPT
+Placed at the bottom for loading pages faster-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/plugins/bxslider/dist/jquery.bxslider.min.js"></script>
+<!-- bxSlider CSS file -->
+
+<!-- <script src="assets/js/jquery-2.1.1.min.js"></script>
+ --><script src="assets/js/main.js"></script>
+
+<script>
+      $.ajax({
+        type:'GET',
+        url:'http://api.forismatic.com/api/1.0/',
+        jsonp:'jsonp',
+        dataType:'jsonp',
+        data: {
+        method: "getQuote",
+        lang: "en",
+        format: "jsonp"
+         },
+        success:function(data) {
+          var quoteText=data.quoteText;
+          var quoteAuthor= data.quoteAuthor;
+          console.log(data);
+           $('p.lead').html('"'+quoteText+'"');
+           $('.author').html(quoteAuthor);
+        }
+      });
+  </script>
+
+ <script>
+   $('#newQuote').click(function(){
+      $.ajax({
+      	type:'GET',
+      	url:'http://api.forismatic.com/api/1.0/',
+      	jsonp:'jsonp',
+      	dataType:'jsonp',
+        data: {
+        method: "getQuote",
+        lang: "en",
+        format: "jsonp"
+         },
+      	success:function(data) {
+      		var quoteText=data.quoteText;
+      		var quoteAuthor= data.quoteAuthor;
+      		console.log(data);
+           $('p.lead').html('"'+quoteText+'"');
+           $('.author').html(quoteAuthor);
+      	}
+      });
+   });
+ </script>
+ </body>

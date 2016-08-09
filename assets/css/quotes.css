@@ -1,0 +1,59 @@
+/*=== GENERAL ===*/
+
+@font-face {
+  font-family: 'SEGOEUIL';
+  src: local('SEGOEUIL'), url('../fonts/SEGOEUIL.ttf') format('truetype');
+}
+
+/*-- To make right white space in mobile --*/
+html,body{
+  width: auto !important;
+}
+
+body {
+    background-color:#f06c00;
+    font-family:'Raleway'; 
+    margin-top:0px;
+     overflow-x: hidden ;
+  }
+
+  p {
+    color:#555;
+    font-family: 'Lato', sans-serif;
+  }
+
+  body::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  border-radius: 10px;
+  background-color: #F5F5F5;
+}
+
+body::-webkit-scrollbar
+{
+  width: 12px;
+  background-color: #F5F5F5;
+}
+
+body::-webkit-scrollbar-thumb
+{
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: #777;
+}
+
+/*=== GLOBAL ===*/
+
+
+#quotes {
+  margin-top:10%;
+}
+
+.twitter {
+  margin-left:0;
+}
+
+
+  
+
+
